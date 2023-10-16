@@ -27,7 +27,9 @@
 ...
 
 * `data` 
-    - contains link to copy of the dataset (stored in a publicly accessible Google Drive folder)
+    - dataset copy on Google Drive folder:
+ https://drive.google.com/drive/folders/1kC-QpEKzTDOs9Y8r7qSyabGHVHa1gIZx?usp=sharing
+
     - saved copy of aggregated / processed data as long as those are not too large (> 10 MB)
 
 * `model`
