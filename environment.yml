@@ -12,3 +12,4 @@ dependencies:
   - pytz
   - bs4
   - plotly
+  - scikit-learn
