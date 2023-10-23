@@ -47,9 +47,20 @@ Additional challenge identified during the EDA stage is that the text of posts i
 
 ### Project Flowchart
 
-...
-...
-...
+
+### Next Steps 
+	
+1. Clean the text	
+2. Sentiment Extraction (VADER)	
+3. Vectorisation. Pre-processing 	
+4. Logistic Regression	
+5. Portfolio of buys and sells	
+6. Backtesting financial preformance 	
+7. Refine Entity Resolution, Dependency, Part Of Speech etc. for each post	
+8. Instead of vectorise, try embeddings - word2vec	
+9. Report, video and presentation	
+
+
 
 ### Project Organization
 
