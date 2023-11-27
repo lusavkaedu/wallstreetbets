@@ -1,5 +1,6 @@
 name: myenv2
 channels:
+  - conda-forge
   - defaults
 dependencies:
   - pandas
@@ -13,3 +14,28 @@ dependencies:
   - bs4
   - plotly
   - scikit-learn
+  - textblob
+  - word2number
+  - inflect
+  - tensorflow
+  - wordcloud
+  - pyspellchecker
+  - geopy
+  - vadersentiment
+  - praw
+  - boto3
+  - imbalanced-learn
+  - chardet
+  - transformers
+  - ipywidgets
+  - openai
+  - tiktoken
+  - shap
+  - xgboost
+  - textstat
+  - conda=23.10.0
+  - spacy
+  - stanza
+  - sentencepiece
+  - dill
+  - joblib
