@@ -37,6 +37,12 @@ For my analysis I chose the following datasets:
 
 2.	Labelled dataset: with a bit of effort, I found a small r/wallstreetbears subreddit dataset that has been labelled by researchers from the University of Texas at San Antonio. The dataset can be downloaded from here: https://zenodo.org/records/5851847#.YeOvhPML8E  and the research paper that accompanied it is available here: https://arxiv.org/abs/2203.08694 (March 2022). The labelled dataset is quite small, only 5000 rows and it was labelled by humans with respect to two features: a) expressed an intent to buy Gamestock (GME) shares (‘Intent”) and 2) expressed support towards wallstreetbets anti-establishment movement in general (“Support”).
 
+    - raw dataset copy on Google Drive folder:
+ https://drive.google.com/drive/folders/1kC-QpEKzTDOs9Y8r7qSyabGHVHa1gIZx?usp=sharing
+
+    - labelled dataset used for modelling:
+https://zenodo.org/records/5851847#.YeOvhPML8E
+
 
 ### Steps performed to date
     
@@ -97,12 +103,6 @@ In this notebook, logistic regression models trained on the labelled data are ap
 
 
 * `data` 
-    - raw dataset copy on Google Drive folder:
- https://drive.google.com/drive/folders/1kC-QpEKzTDOs9Y8r7qSyabGHVHa1gIZx?usp=sharing
-
-    - labelled dataset used for modelling:
-https://zenodo.org/records/5851847#.YeOvhPML8E
-
     - saved copy of aggregated / processed data as long as those are not too large (> 10 MB)
 
 * `model`
@@ -138,6 +138,9 @@ https://zenodo.org/records/5851847#.YeOvhPML8E
 
 ### Credits & References
 
-...
-...
-...
+The white paper from the University of Texas in San Antonio that was a good starting point in my analysis.  This papers explains the labelled dataset in detail.  
+https://arxiv.org/abs/2203.08694
+
+Predicting $GME Stock Price Movement Using Sentiment from Reddit r/wallstreetbets
+https://aclanthology.org/2021.finnlp-1.4.pdf
+The white paper from the university of ILlinois in Chicago. This was an interesting paper that explains the approach to using BERT and Word2Vec embeddings for the WallStreetBets messages analysis.   
