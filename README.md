@@ -1,7 +1,7 @@
 ## r/Wallstreetbets: Precise Forecasters
 =========================
 
-## Project Overview
+This project focuses on analyzing the sentiment of financial discussions on the Reddit platform, specifically within the WallStreetBets subreddit. The goal is to identify and understand the sentiment expressed in these discussions and, in turn, gain insights into the financial opinions and behaviors of the community members.
 
 ### Problem Statement and Background
 
@@ -15,16 +15,13 @@ This analysis would help me to identify social media accounts with a history of 
 
 **Objective of the Project**
 
-I want to explore how machine learning (ML) and natural language processing (NLP) techniques can be used to ease the task of identifying and ranking “smart” social media accounts (the “Precise Forecasters”).  
+I want to explore how machine learning (ML) and natural language processing (NLP) techniques can be used to ease the task of identifying and ranking “smart” social media accounts (the “Precise Forecasters”). 
+
 The goal of this project  is to scrutinize historical posts on financially-oriented subreddits like r/Wallstreetbets and r/gme, decode sentiments and topics, and translate them into definitive market actions—buy or sell signals. Public accounts on these subreddits will be treated as "financial advisors," their market recommendations subject to subsequent scoring.
 
 **Potential Business Value**
-•	This project aspires to elevate the decision-making capabilities of investors, particularly the small retail investors without the AI resources of larger institutions.
-•	Amidst the social network clamor lies wisdom. Isolating the insightful from the mundane could vastly benefit investors of all stripes.
-Project Impact
-•	Aids investors in distinguishing between insightful investment leads and misguided ones.
-•	Facilitates the creation of a real-time trading strategy.
-•	Holds the promise to enhance the efficiency of capital markets, a sphere with multi-trillion-dollar implications, fostering a more affluent society.
+•	This project aims to develop tools that will help to filter noise from signal for investors.  The tools will help to  distinguish between insightful investment leads and misguided ones.
+•	The filtering system can also be used for the creation of a real-time trading strategy.
 
 To build this filtering system I needed to answer a few key questions:
 
@@ -37,45 +34,53 @@ To build this filtering system I needed to answer a few key questions:
 For my analysis I chose the following datasets:
 
 1.	Reddit posts dataset collected by a user Leukipp and hosted on Kaggle. https://www.kaggle.com/datasets/leukipp/reddit-finance-data.  This dataset has 1.5 million of posts from 2021 on finance related topics posted on Reddit, the social media platform. Unlike many other similar datasets use for analysing investor sentiment, the dataset I chose has information on the posters’ account names. This allowed me to group the results by author. 
-2.	Labelled dataset: with a bit of effort, I found a small r/wallstreetbears subreddit dataset that has been labelled by researchers from the University of Texas at San Antonio. The dataset can be downloaded from here: https://zenodo.org/records/5851847#.YeOvhPML8E  and the research paper that accompanied it is available here: https://arxiv.org/abs/2203.08694 (March 2022). 
 
-The labelled dataset is quite small, only 5000 rows and it was labelled by humans with respect to two features: a) expressed an intent to buy Gamestock (GME) shares (‘Intent”) and 2) expressed support towards wallstreetbets anti-establishment movement in general (“Support”).  I was mostly interested in the first field, an intent to buy a financial instrument, so I made this as my target variable. The labelled dataset had 5 categories for expressing varied degrees of intent: yes (20%), no (3%), maybe (7%), unclear (65%), and informational post (6%).  I am mostly interested in capturing definitive bullish/bearish stance, and the fact that only 3% of the small dataset expressed clearly negative intent is unfortunate. Only 100 observations are labelled “no” for “Intent”, and this is normally not sufficient to build a robust predictive model using ML techniques. 
+2.	Labelled dataset: with a bit of effort, I found a small r/wallstreetbears subreddit dataset that has been labelled by researchers from the University of Texas at San Antonio. The dataset can be downloaded from here: https://zenodo.org/records/5851847#.YeOvhPML8E  and the research paper that accompanied it is available here: https://arxiv.org/abs/2203.08694 (March 2022). The labelled dataset is quite small, only 5000 rows and it was labelled by humans with respect to two features: a) expressed an intent to buy Gamestock (GME) shares (‘Intent”) and 2) expressed support towards wallstreetbets anti-establishment movement in general (“Support”).
 
-### Project orgainsation
-
-The project is organised into the following notebooks:
-
-01. Reddit Data Loading and EDA.  
-02_A. Labelled dataset text cleaning.
-02_B. Reddit text cleaning.
-03_A. Labelled dataset modelling.
 
 ### Steps performed to date
     
-1. Clean the text   
-2. Sentiment Extraction (VADER) 
-3. Vectorisation. Pre-processing    
-4. Logistic Regression  
+1. EDA of both datasets.
+2. Cleaning the text.
+3. Bag of words approach: Vectorisation. Pre-processing.
+4. Modelling using the vectorised text. 
+5. Application of the models trained on the labelled data towards unseen data. 
 
-### Next Steps 
-    
-5. Portfolio of buys and sells  
-6. Back testing financial performance    
-7. Refine Entity Resolution, Dependency, Part Of Speech etc. for each post  
-8. Instead of vectorise, try embeddings - word2vec  
-9. Report, video and presentation  
+## Next Steps
 
-### 1. Data Loading and EDA
+1. Building predictive models that focus on sentence-level embeddings, comparing their performance to traditional Bag of Words (BoW) models.
 
-The dataset was generally clean, but some data cleaning was still necessary.  Specifically, 5.6% of duplicate or repetitive rows were eliminated.  
+2. Performing back testing of financial predictions made by WallStreetBets authors/accounts in 2021 to evaluate their financial skills and accuracy.
 
-Additionally, I converted the date into proper data type, eliminated several unnecessary columns, and created several new calculated fields, with information on word count for text fields, and popularity rankings of various posts. 
+3. Conducting a clustering analysis of actively posting authors, using additional feature engineering to rate posts based on language complexity, readability, and other factors. This will help identify accounts worth following for financial insights. 
 
-An important observation derived from early EDA was that the dataset is extremely imbalanced, with only 0.1% of accounts gaining all the attention (likes, comments, reposts), and only 20 top days comprising nearly 40% of all the posts. However, this imbalance is not an obstacle for text analysis and sentiment extraction. 
+## Project Organization
 
-The encouraging result of the initial EDA is that top 150 accounts posted sufficient number of times (100-700 times in 2021) to be able to identify buy and sell signals throughout the year.
+The project comprises several notebooks, each with a specific focus and objective:
 
-Additional challenge identified during the EDA stage is that the text of posts is full of slang and emojis. I will need to do a lot of work preparing the text for machine processing.
+### Notebook 1 - Labelled Dataset - EDA and Cleaning
+
+This notebook explores a labelled dataset of Reddit comments collected from the WallStreetBets subreddit in early 2021. The dataset focuses on identifying the intent to buy or not to buy securities expressed by various authors. It includes information about the authors, their comments, and labels indicating intent.
+
+### Notebook 2 - Negative Labels Upsampling using OpenAI API
+
+In this notebook, the author addresses the issue of imbalanced labels in the dataset, with a significant shortage of negatively labeled comments. To overcome this, OpenAI's GPT models are used to generate additional negative labels for upsampling.
+
+### Notebook 3A - Labelled Dataset - "Bag of Words" Modelling - Yes and No only
+
+This notebook focuses on modeling the upsampled labelled dataset using binary encoding strategies for the target variable "Intent." Various classification models and encoding combinations are explored, ultimately settling on two primary encoding strategies for modeling.
+
+### Notebook 3B - Labelled Dataset - "Bag of Words" Modelling - Relevant and Irrelevant
+
+This notebook explores an alternate encoding strategy, differentiating between "relevant" and "irrelevant" classes within the labelled dataset. The results of this encoding strategy are analyzed, and the significance of various word tokens is examined.
+
+### Notebook 4 - Reddit Dataset - EDA and Data Cleaning
+
+This notebook shifts attention to a larger dataset of unlabelled Reddit posts on financial topics throughout 2021. Extensive exploratory data analysis (EDA) and data cleaning are performed to prepare this dataset for various machine learning techniques and experiments.
+
+### Notebook 5 - Reddit Dataset - BOW Models Applied
+
+In this notebook, logistic regression models trained on the labelled data are applied to the unlabelled Reddit dataset. The models predict the relevance and sentiment (bullish or bearish) of posts, allowing for analysis of overall community sentiment trends and the identification of influential authors.
 
 #### Data Dictionary: 
 
@@ -84,18 +89,12 @@ Additional challenge identified during the EDA stage is that the text of posts i
 ### Walkthrough Demo
 
 ...
-...
-...
+
 
 ### Project Flowchart
 
  
 
-### Project Organization
-
-...
-...
-...
 
 * `data` 
     - raw dataset copy on Google Drive folder:
@@ -136,19 +135,9 @@ https://zenodo.org/records/5851847#.YeOvhPML8E
 * `LICENSE`
     - Project license
 
-### Dataset
-
-...
-...
-...
 
 ### Credits & References
 
 ...
 ...
 ...
-
---------
-
-
-
