@@ -1,6 +1,8 @@
 # don't upload data files
 data/
 temp/
+.tmp.driveupload/
+
 
 # Jupyter Notebook
 .ipynb_checkpoints
