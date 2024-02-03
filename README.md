@@ -1,33 +1,25 @@
 ## r/Wallstreetbets: Precise Forecasters
 =========================
 
-This project focuses on analyzing the sentiment of financial discussions on the Reddit platform, specifically within the WallStreetBets subreddit. The goal is to identify and understand the sentiment expressed in these discussions and, in turn, gain insights into the financial opinions and behaviors of the community members.
+This was my Capstone project for the BrainStation Bootcamp in London in 2023. It focuses on analyzing the sentiment of financial discussions on the Reddit platform, specifically within the WallStreetBets subreddit. The goal was to identify and understand investment sentiment expressed in various investment related discussions and, in turn, gain insights into the financial opinions and behaviors of the community members.
 
 ### Problem Statement and Background
 
-We all face an increasing information overload. Signal to noise ratio is very low.  This is especially relevant in financial markets, where difference of opinions is very high, as it should be.  
+We all face an increasing information overload. Signal to noise ratio is very low.  This is especially relevant in financial markets, where difference of opinions is very high, as it should be. On the same day, investors are bombarded by various opinions - some of them argue a stock is a BUY, some others argue it is a SELL. 
 
-It is sensible to attempt to utilise the machine language processing techniques to improve information filtering for market participants. 
+This project is an attempt to capture investment recommendations expressed on social media networks by various accounts and use machine learning and text processing tools to separate signal from the noise.  I am trying to identify social media accounts with a history of accurate investment advice/predictions while sidelining those with poor timing in their market actions. Such a filtration system will enable a focused consideration of only those voices with a credible track record in investment decisions.
 
-This project is an attempt to capture investment recommendations expressed on social media networks and use machine learning and text processing tools to separate signal from the noise. 
-
-This analysis would help me to identify social media accounts with a history of accurate investment advice while sidelining those with poor timing in their market actions. Such a filtration system will enable a focused consideration of only those voices with a credible track record in investment decisions.
-
-**Objective of the Project**
-
-I want to explore how machine learning (ML) and natural language processing (NLP) techniques can be used to ease the task of identifying and ranking “smart” social media accounts (the “Precise Forecasters”). 
-
-The goal of this project  is to scrutinize historical posts on financially-oriented subreddits like r/Wallstreetbets and r/gme, decode sentiments and topics, and translate them into definitive market actions—buy or sell signals. Public accounts on these subreddits will be treated as "financial advisors," their market recommendations subject to subsequent scoring.
+My goal was to scrutinize historical posts on financially-oriented subreddits like r/Wallstreetbets and r/gme, decode sentiments and topics, and translate them into definitive "recommendations" issued by the authors — the buy or sell signals. Public accounts on these subreddits will be treated as "financial advisors," their market recommendations subject to subsequent scoring.
 
 **Potential Business Value**
 •	This project aims to develop tools that will help to filter noise from signal for investors.  The tools will help to  distinguish between insightful investment leads and misguided ones.
-•	The filtering system can also be used for the creation of a real-time trading strategy.
+•	The filtering system potentially can also be used for the creation of a real-time trading strategy.
 
 To build this filtering system I needed to answer a few key questions:
 
-1.  What is the subject of discussion on social networks (which stocks are being debated)?
-2.  What is the sentiment on the market participants, are they bullish or bearish? 
-3.  If I were to follow sentiment expressed by a specific social account, and buy when this account is bullish and sell when this account is bearish, what my financial performance would be? 
+1.  What is the subject of discussion on social networks (which stocks are being debated)? Topic identification. 
+2.  What is the sentiment on the market participants, are they bullish or bearish? Sentiment detection. 
+3.  If I were to follow sentiment expressed by a specific social account, and buy when this account is bullish and sell when this account is bearish, what my financial performance would be? Backtesting trades. 
 
 ### Datasets
 
@@ -84,7 +76,7 @@ This notebook explores an alternate encoding strategy, differentiating between "
 
 This notebook shifts attention to a larger dataset of unlabelled Reddit posts on financial topics throughout 2021. Extensive exploratory data analysis (EDA) and data cleaning are performed to prepare this dataset for various machine learning techniques and experiments.
 
-### Notebook 5 - Reddit Dataset - BOW Models Applied
+### Notebook 5 - Reddit Dataset - BOW Models Applied to the Reddit Dataset Sample
 
 In this notebook, logistic regression models trained on the labelled data are applied to the unlabelled Reddit dataset. The models predict the relevance and sentiment (bullish or bearish) of posts, allowing for analysis of overall community sentiment trends and the identification of influential authors.
 
