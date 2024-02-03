@@ -109,17 +109,11 @@ In this notebook, logistic regression models trained on the labelled data are ap
 * `references`
     - contains papers / tutorials used in the project
 
-* `src`
-    - Contains the project source code (refactored from the notebooks)
-
 * `.gitignore`
     - Part of Git, includes files and folders to be ignored by Git version control
 
 * `environment.yml`
     - Conda environment specification
-
-* `Makefile`
-    - Automation script for the project
 
 * `README.md`
     - Project landing page (this page)
