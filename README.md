@@ -5,7 +5,7 @@ This was my Capstone project for the BrainStation Bootcamp in London in 2023. It
 
 ### Problem Statement and Background
 
-We all face an increasing information overload. Signal to noise ratio is very low.  This is especially relevant in financial markets, where difference of opinions is very high, as it should be. On the same day, investors are bombarded by various opinions - some of them argue a stock is a BUY, some others argue it is a SELL. 
+We all face an increasing information overload. Signal to noise ratio is very low.  This is especially relevant in financial markets, where difference of opinions is very high. On the same day, investors are bombarded by various opinions - some of them argue a stock is a BUY, some others argue it is a SELL. 
 
 This project is an attempt to capture investment recommendations expressed on social media networks by various accounts and use machine learning and text processing tools to separate signal from the noise.  I am trying to identify social media accounts with a history of accurate investment advice/predictions while sidelining those with poor timing in their market actions. Such a filtration system will enable a focused consideration of only those voices with a credible track record in investment decisions.
 
